@@ -1,0 +1,21 @@
+
+<template>
+    <lightning-card title="Account Details">
+        <!-- Show button to trigger the display of account data -->
+        <lightning-button label="Show" onclick={handleShowData}></lightning-button>
+
+        <!-- Hide button to hide account data -->
+        <lightning-button label="Hide" onclick={handleHideData}></lightning-button>
+
+
+        <!-- Show data table only if showData is true and there is data -->
+        <template if:true={showData}>
+                <lightning-datatable
+                    data={data}
+                    columns={columns}
+                    key-field="Id"
+                    class="slds-m-around_medium"
+                ></lightning-datatable>
+        </template>
+    </lightning-card>
+</template>
